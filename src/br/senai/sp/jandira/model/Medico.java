@@ -6,7 +6,7 @@ public class Medico {
 
 	private String nome;
 	private LocalDate dataDeNascimento;
-	private String sexo;
+	private Genero genero;
 	private String crm;
 	private Especialidade[] especialidades;
 

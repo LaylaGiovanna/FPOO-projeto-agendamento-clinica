@@ -8,7 +8,6 @@ import br.senai.sp.jandira.model.Endereco;
 import br.senai.sp.jandira.model.Especialidade;
 import br.senai.sp.jandira.model.Estados;
 import br.senai.sp.jandira.model.Genero;
-import br.senai.sp.jandira.model.Generos;
 import br.senai.sp.jandira.model.Medico;
 import br.senai.sp.jandira.model.Paciente;
 import br.senai.sp.jandira.model.PlanoDeSaude;
@@ -36,13 +35,13 @@ public class ClinicaApp {
 		especialidade5.setNome("Clínica Geral");
 
 		// Planos
-		PlanoDeSaude plano1 = new PlanoDeSaude();
-		plano1.setOperadora("Unimed");
-		plano1.setTipoDoPlano("Bronze");
+		PlanoDeSaude plano1 = new PlanoDeSaude("Unimed","ouro");
 
-		PlanoDeSaude plano2 = new PlanoDeSaude();
-		plano2.setOperadora("Bradesco");
-		plano2.setTipoDoPlano("Ouro");
+		PlanoDeSaude plano2 = new PlanoDeSaude("Amil", "Platina");
+		
+		
+		PlanoDeSaude plano3 = new PlanoDeSaude("Amil");
+		System.out.println("Plano:" + plano3.getDadosDoPlano());
 
 		// Endereços
 		Endereco endereco1 = new Endereco();
@@ -81,7 +80,7 @@ public class ClinicaApp {
 		Medico medico2 = new Medico();
 		medico2.setNome("Pedro Oliveria");
 		medico2.setCrm("8146-06");
-		medico2.setSexo("Masculino");
+		medico2.setGenero(Genero.MASCULINO);
 		medico2.setDataDeNascimento(LocalDate.of(1984, 8, 20));
 
 		Especialidade[] especialidades2 = { especialidade1, especialidade3, especialidade5 };
@@ -95,7 +94,7 @@ public class ClinicaApp {
 		paciente1.setRg("50.128.581-7");
 		paciente1.setCpf("451.022.128.26");
 		paciente1.setTelefone("(11)97136-4704");
-		paciente1.setSexo("Feminino");
+		paciente1.setGenero(Genero.FEMININO);
 		paciente1.setTipoSanguineo("O+");
 		paciente1.setPlanoDeSaude(plano2);
 		paciente1.setEndereco(endereco2);
@@ -107,7 +106,7 @@ public class ClinicaApp {
 		paciente2.setNome("Ingryd");
 		paciente2.setPlanoDeSaude(plano1);
 		paciente2.setRg("52.463.646-1");
-		paciente2.setSexo("Feminino");
+		paciente2.setGenero(Genero.FEMININO);
 		paciente2.setTelefone("(11)949676202");
 		paciente2.setTipoSanguineo("a+");
 
